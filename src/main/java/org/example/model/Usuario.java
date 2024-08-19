@@ -34,4 +34,10 @@ public class Usuario {
     public void setSexo(char sexo) {
         this.sexo = sexo;
     }
+
+    public void apresentart(){
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Sexo: " + sexo);
+    }
 }
