@@ -4,6 +4,7 @@ import org.example.controller.Arquivo;
 import org.example.model.Usuario;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -21,6 +22,8 @@ public class Main {
         arquivo.salvar(user4);
 
         System.out.println("--------------");
+
+        ArrayList<String> linhas =  arquivo.ler();
 
     }
 }

@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.model.Usuario;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Arquivo {
 
@@ -27,10 +28,23 @@ public class Arquivo {
         System.out.println("Usuario: " + usuario.getNome() +" salvo com sucesso!");
     }
 
-    public void ler(Usuario usuario) throws IOException {
+    public ArrayList<String> ler() throws IOException {
+        ArrayList<String> arquivo = new ArrayList<>();
         InputStream is = new FileInputStream("cadastros.txt");
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader br = new BufferedReader(isr);
+
         String linha = br.readLine();
+        while (linha != null) {
+            System.out.println(linha);
+            arquivo.add(linha);
+            linha = br.readLine();
+        }
+        br.close();
+        isr.close();
+        is.close();
+
+        System.out.println("A leitura do arquivo foi concluida com sucesso!");
+        return arquivo;
     }
 }
